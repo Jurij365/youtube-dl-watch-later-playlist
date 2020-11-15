@@ -127,5 +127,6 @@ if __name__ == '__main__':
         prefix = "youtube-dl -i -c "
         output = "-o '" + download_folder + "%(title)s.%(ext)s' "
         quality = "-f 'bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]' "
-        cmd = prefix + output + quality + video
+        extra = "--download-archive youtube-dl/watch_later.txt --add-metadata --write-description "
+        cmd = prefix + output + quality + video + extra
         run_terminal_cmd(cmd)
